@@ -24,7 +24,7 @@ class InfoBar extends React.Component {
             flex-wrap: wrap;
             justify-content: space-around;
             background: #2cb131cc;
-            padding: 10px;
+            padding: 10px 0;
             margin: 0;
             position: absolute;
             top: 0;
@@ -39,20 +39,19 @@ class InfoBar extends React.Component {
             background: url(${icons.money});
           }
           .icon {
-            padding-left: 40px;
-            padding-right: 40px;
+            padding: 5px;
             text-align: center;
             position: relative;
-            font-size: 24px;
-            margin: 5px 0;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
           }
           .icon::before {
             content: " ";
             width: 32px;
             height: 32px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            display: block;
+            margin-right: 5px;
           }
 
           @media only screen and (max-height: 500px) {

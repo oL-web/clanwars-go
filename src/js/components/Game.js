@@ -70,7 +70,6 @@ class Game extends React.Component {
           *::before {
             box-sizing: border-box;
           }
-
           html,
           body,
           #app {
@@ -83,15 +82,20 @@ class Game extends React.Component {
             font-family: "Raleway", sans-serif;
             user-select: none;
           }
-
           button {
             outline: 0;
           }
-
           h1,
           h2,
           h3 {
             font-weight: normal;
+          }
+          @media only screen and (max-width: 560px) {
+            html,
+            body,
+            #app {
+              border: 0;
+            }
           }
         `}</style>
         <style jsx>{`

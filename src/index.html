@@ -29,12 +29,15 @@
 </head>
 
 <body>
+    <noscript>
+        You need Javascript to run this app!
+    </noscript>
+
     <div id="app"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvNUXV9az3mu5gW-sbPZyT2XKQKjYf7zs&libraries=places">
     </script>
     <script src="js/index.js"></script>
-
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw' + '.js')

@@ -69,6 +69,10 @@ class LoginForm extends React.Component {
 
     return false;
   };
+  requestGeolocationEarly = () => {
+    const fn = () => {};
+    navigator.geolocation.getCurrentPosition(fn, fn);
+  };
   render() {
     const { loginPass, loginUsername, registerUsername, registerPass, registerPassRepeat, registerError, loginError } = this.state;
     const logging = this.props.logging;
@@ -86,7 +90,9 @@ class LoginForm extends React.Component {
             {loginError && <p>{loginError}</p>}
             <input autoComplete="username" onChange={this.updateValue("loginUsername")} type="text" name="login-username" value={loginUsername} placeholder="Username" required />
             <input autoComplete="current-password" onChange={this.updateValue("loginPass")} type="password" name="login-password" value={loginPass} placeholder="Password" required />
-            <button type="submit">Log in</button>
+            <button onClick={this.requestGeolocationEarly} type="submit">
+              Log in
+            </button>
           </form>
         </section>
 
@@ -97,7 +103,9 @@ class LoginForm extends React.Component {
             <input autoComplete="username" onChange={this.updateValue("registerUsername")} type="text" name="username" value={registerUsername} placeholder="Username" minLength="6" required />
             <input autoComplete="new-password" onChange={this.updateValue("registerPass")} type="password" name="password" value={registerPass} placeholder="Password" minLength="6" required />
             <input autoComplete="new-password" onChange={this.updateValue("registerPassRepeat")} type="password" name="repeat-password" value={registerPassRepeat} placeholder="Repeat password" minLength="6" required />
-            <button type="submit">Register account</button>
+            <button onClick={this.requestGeolocationEarly} type="submit">
+              Register account
+            </button>
           </form>
         </section>
 
