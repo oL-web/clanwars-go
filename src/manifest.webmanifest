@@ -1,0 +1,17 @@
+{
+  "lang": "en-US",
+  "name": "ClanWars GO",
+  "short_name": "ClanWars GO",
+  "description": "Take over the world, one Google Maps place marker at a time!",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "any",
+  "icons": [{
+    "src": "./favicon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

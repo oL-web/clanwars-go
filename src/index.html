@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="description" content="Take over the world, one Google Maps place marker at a time!">
+    <meta name="keywords" content="ol-web, github, clanwars, clanwarsgo, go">
+
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ClanWars GO" />
+    <meta name="apple-mobile-web-app-title" content="ClanWars GO" />
+    <meta name="msapplication-starturl" content="/" />
+
+    <style>
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Raleway'), local('Raleway-Regular'), url("./fonts/Raleway-Regular.ttf") format('truetype');
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>ClanWars GO</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvNUXV9az3mu5gW-sbPZyT2XKQKjYf7zs&libraries=places">
+    </script>
+    <script src="js/index.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw' + '.js')
+                .then(function (registration) {
+                    console.log("SW registered!", registration);
+                })
+                .catch(function (error) {
+                    console.log("SW failed to register!", error);
+                });
+        }
+    </script>
+</body>
+
+</html>

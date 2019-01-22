@@ -1,0 +1,16 @@
+{
+  "presets": ["stage-2", "stage-3", "react"],
+  "plugins": [
+    "babel-plugin-transform-class-properties",
+    "styled-jsx/babel"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-remove-console", {
+          "exclude": ["error", "warn"]
+        }]
+      ]
+    }
+  }
+}
