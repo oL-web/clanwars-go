@@ -8,10 +8,11 @@
     "dev-server": "nodemon --ignore dist/* --ignore src/* --ignore .cache/* --inspect --require dotenv/config server.js",
     "dev": "concurrently \"parcel watch src/index.html\" \"npm run dev-server\"",
     "server": "node --require dotenv/config server.js",
-    "start": "npm run server",
     "prebuild": "rimraf dist",
     "build": "parcel build src/index.html --no-source-maps  --public-url \".\"",
-    "postbuild": "imagemin dist/* --out-dir=dist && workbox generateSW"
+    "postbuild": "imagemin dist/* --out-dir=dist && workbox generateSW",
+    "start": "npm run server",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "babel-core": "^6.26.3",

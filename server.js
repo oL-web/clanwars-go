@@ -63,9 +63,6 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
 app.use("/users", usersRoute);
 app.use("/markers", markersRoute);
 
