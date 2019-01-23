@@ -7,11 +7,11 @@ const actionHandler = require("../helpers/actionHandler");
 module.exports = {
   async getMarkers(req, res) {
     const { lat, lng } = req.query;
-    const distance = 0.0003;
+    const distance = 0.001;
 
     const markers = await MapLocation.find({}, "coords owner npc types placeId lvl").near("coords", {
       center: [lng, lat],
-      maxDistance: 2 * distance
+      maxDistance: distance
     });
 
     return res.status(200).json(markers);
