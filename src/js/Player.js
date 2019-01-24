@@ -11,7 +11,7 @@ class Player extends google.maps.Circle {
     this.lastDiscoveryCoords = { lat: 0, lng: 0 };
     this.promisifiedNearbySearch = options =>
       new Promise((resolve, reject) => {
-        this.placesService.nearbySearch(options, results => {
+        this.placesService.nearbySearch(options, (results, status) => {
           if (status !== "OK") return resolve([]);
           resolve(results);
         });
@@ -32,7 +32,7 @@ class Player extends google.maps.Circle {
       cwgAPI.getNearbyMarkers(lat, lng),
       this.promisifiedNearbySearch({
         location: this.center,
-        radius: this.radius
+        radius: this.radius * 3
       })
     ]);
 
